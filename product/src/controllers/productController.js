@@ -91,7 +91,6 @@ class ProductController {
             res.status(500).json({ message: "Server error" });
         }
     }
-
     async getProductById(req, res) {
         try {
             const { id } = req.params;
@@ -99,7 +98,7 @@ class ProductController {
             if (!product) {
                 return res.status(404).json({ message: "Product not found" });
             }
-            res.status(200).json(product);
+            res.status(200).json(product)
         } catch (error) {
             console.error(error);
             res.status(500).json({ message: "Server error" });
