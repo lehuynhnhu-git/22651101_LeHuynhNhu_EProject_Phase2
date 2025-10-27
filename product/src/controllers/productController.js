@@ -96,8 +96,7 @@ class ProductController {
             const { id } = req.params;
             const product = await this.productService.getProductById(id);
             if (!product) {
-                return res.status(404).json({ message: "khong co san pham" });
-
+                return res.status(404).json({ message: "san pham khong ton tai" });
             }
             res.status(200).json(product);
         } catch (error) {
@@ -105,6 +104,7 @@ class ProductController {
             res.status(500).json({ message: "loi server" });
         }
     }
+
 
 
 }
